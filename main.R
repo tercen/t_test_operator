@@ -1,6 +1,11 @@
 library(tercen)
 library(dplyr)
 
+source('~/.Rprofile')
+
+options("tercen.workflowId"= "021a818508da131dae203da13410c8b6")
+options("tercen.stepId"= "8-4")
+
 do.ttest = function(df, ...){
   pv = NaN
   result = try(t.test(.y ~ .group.colors, data=df, ...), silent = TRUE)
