@@ -17,6 +17,12 @@
     "description": "A character string specifying the alternative hypothesis."
   },
   {
+    "kind": "BooleanProperty",
+    "name": "paired",
+    "defaultValue": false,
+    "description": "A logical variable indicating whether the observations are paired. If true, a label is expected from the Tercen projection to assign the pairs."
+  },
+  {
     "kind": "DoubleProperty",
     "name": "mu",
     "defaultValue": 0.0,
