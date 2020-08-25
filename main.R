@@ -10,7 +10,6 @@ do.ttest = function(df, ...) {
   b <- df$.y[df$.group.colors == grp[2]]
   
   result = try(t.test(a, b, ...), silent = TRUE)
-  print(result)
   if(!inherits(result, 'try-error')) pv = result$p.value
   return (data.frame(.ri = df$.ri[1], .ci = df$.ci[1], pv= c(pv)))
 }
