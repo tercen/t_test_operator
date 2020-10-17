@@ -1,8 +1,8 @@
-# ttest operator
+# t-test operator
 
-#### Description
+##### Description
 
-`ttest` operator performs a Student's t-test on the data
+The `ttest` operator performs a Student's t-test on the data.
 
 ##### Usage
 
@@ -26,15 +26,13 @@ Output relations|.
 
 ##### Details
 
-The operator is the `t.test` function in base R .
+The operator is the `t.test` function in base R.
 
-#### References
+##### References
 
 see the `base::t.test` function of the R package for the documentation, 
 
 ##### See Also
 
-[anova](https://github.com/tercen/anova_operator),[rfImp](https://github.com/tercen/rfImp_operator)
-
-
+[anova](https://github.com/tercen/anova_operator), [rfImp](https://github.com/tercen/rfImp_operator)
 
