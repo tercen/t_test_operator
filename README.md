@@ -1,9 +1,11 @@
-# ttest operator
+# t-test operator
 
-#### Description
-`ttest` operator performs a Student's t-test on the data
+##### Description
+
+The `ttest` operator performs a Student's t-test on the data.
 
 ##### Usage
+
 Input projection|.
 ---|---
 `color`   | represents the groups to compare
@@ -21,16 +23,14 @@ Output relations|.
 `pv`| numeric, p-value calculated per cell
 
 ##### Details
-The operator is the `t.test` function in base R .
 
+The operator is the `t.test` function in base R.
 
-#### References
+##### References
+
 see the `base::t.test` function of the R package for the documentation, 
 
-
 ##### See Also
-[anova](https://github.com/tercen/anova_operator),[rfImp](https://github.com/tercen/rfImp_operator)
 
-#### Examples
-
+[anova](https://github.com/tercen/anova_operator), [rfImp](https://github.com/tercen/rfImp_operator)
 
