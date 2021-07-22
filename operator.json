@@ -1,6 +1,6 @@
 {
-  "name": "ttest",
-  "description": "Student's t-test",
+  "name": "t-Test",
+  "description": "Determines if there is a significant difference between the means of two groups, which may be related in certain features.",
   "tags": ["statistical testing", "test"],
   "authors": ["tercen"],
   "urls": ["https://github.com/tercen/ttest_operator"],
