@@ -37,4 +37,3 @@ df <- ctx %>%
   mutate(n1 = as.double(n1), n2 = as.double(n2)) %>%
   ctx$addNamespace() %>%
   ctx$save()
-

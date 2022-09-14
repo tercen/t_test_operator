@@ -4,7 +4,7 @@
   "tags": ["statistical testing"],
   "authors": ["tercen"],
   "urls": ["https://github.com/tercen/t_test_operator"],
-  "container": "tercen/t_test_operator:latest",
+  "container": "tercen/t_test_operator:1.0.0",
   "properties": [
     {
     "kind": "EnumeratedProperty",
