@@ -3,16 +3,18 @@
   "name": "test_1",
   "namespace": "ds00",
   "inputDataUri": "test_1_in.csv",
-  "outputDataUri": ["test_1_out_1.csv"],
-  "columns": [],
-  "rows": [],
+  "outputDataUri": ["test_1_out_1.csv", "test_1_out_2.csv", "test_1_out_3.csv"],
+  "columns": [
+    "gene"
+  ],
+  "rows": ["tableId"],
   "colors": [
     "condition"
   ],
   "labels": [],
   "yAxis": "y_values",
-  "xAxis": "",
-  "generatedOn": "09/14/2022 03:18:55 PM 2022",
+  "xAxis": "x_values",
+  "generatedOn": "09/14/2022 03:29:20 PM 2022",
   "version": "",
   "absTol": 1e-05
 }

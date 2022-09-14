@@ -33,5 +33,6 @@ df <- ctx %>%
     paired = paired,
     var.equal = var.equal,
     conf.level = conf.level)) %>%
+  select(-.y.) %>%
   ctx$addNamespace() %>%
   ctx$save()
