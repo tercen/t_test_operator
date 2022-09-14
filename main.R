@@ -34,5 +34,6 @@ df <- ctx %>%
     var.equal = var.equal,
     conf.level = conf.level)) %>%
   select(-.y.) %>%
+  mutate(n1 = as.double(n1), n2 = as.double(n2)) %>%
   ctx$addNamespace() %>%
   ctx$save()
