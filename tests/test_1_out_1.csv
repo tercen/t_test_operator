@@ -1,4 +1,4 @@
-".ri",".ci",".y.","ds00.group1","ds00.group2","ds00.n1","ds00.n2","ds00.statistic","ds00.df","ds00.p","ds00.p.adj","ds00.p.adj.signif"
-0,0,".y","condition1","condition2",300,200,2.26325455470223,498,0.024,0.072,"ns"
-0,0,".y","condition1","condition3",300,100,0.652566274646912,398,0.514,0.564,"ns"
-0,0,".y","condition2","condition3",200,100,-1.07731169538509,298,0.282,0.564,"ns"
+".ri",".ci","ds00.group1","ds00.group2","ds00.n1","ds00.n2","ds00.statistic","ds00.df","ds00.p","ds00.p.adj","ds00.p.adj.signif"
+0,0,"condition1","condition2",300,200,2.26325455470223,498,0.024,0.072,"ns"
+0,0,"condition1","condition3",300,100,0.652566274646912,398,0.514,0.564,"ns"
+0,0,"condition2","condition3",200,100,-1.07731169538509,298,0.282,0.564,"ns"
