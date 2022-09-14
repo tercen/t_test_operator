@@ -11,7 +11,7 @@
   ],
   "labels": [],
   "yAxis": "y_values",
-  "xAxis": "x_values",
+  "xAxis": "",
   "generatedOn": "09/14/2022 03:18:55 PM 2022",
   "version": "",
   "absTol": 1e-05
