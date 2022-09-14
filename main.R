@@ -1,37 +1,40 @@
 library(tercen)
+library(tercenApi)
 library(dplyr)
+library(rstatix)
 
-do.ttest = function(df, ...) {
-  pv = NaN
-  df <- df[order(df$.group.labels), ]
-  
-  grp <- unique(df$.group.colors)
-  a <- df$.y[df$.group.colors == grp[1]]
-  b <- df$.y[df$.group.colors == grp[2]]
-  
-  result = try(t.test(a, b, ...), silent = TRUE)
-  if(!inherits(result, 'try-error')) pv = result$p.value
-  return (data.frame(.ri = df$.ri[1], .ci = df$.ci[1], pv= c(pv)))
-}
+options("tercen.workflowId" = "accb3dd703974f1ce0afa21032002592")
+options("tercen.stepId" = "15c0c454-f506-4d67-b86e-ce83a92dcfb8")
 
 ctx = tercenCtx()
 
-if (length(ctx$colors) < 1) stop("A color factor is required.")
+if(length(ctx$colors) < 1) stop("A color factor is required.")
 
-if(as.logical(ctx$op.value('paired'))) {
-  if (length(ctx$labels) < 1) stop("Labels are required for a paired test.")
-}
+paired <- ctx$op.value('paired', as.logical, FALSE)
+alternative <- ctx$op.value('alternative', as.character, 'two.sided')
+mu <- ctx$op.value('mu', as.double, 0.0)
+var.equal <- ctx$op.value('var.equal', as.logical, TRUE)
+conf.level <- ctx$op.value('conf.level', as.double, 0.95)
+p.adjust.method <- ctx$op.value('conf.level', as.character, 'holm')
+
+if(paired & length(ctx$labels) < 1) {
+  stop("Labels are required for a paired test.")
+} 
 
 df <- ctx %>% 
   select(.ci, .ri, .y) %>%
   mutate(.group.colors = do.call(function(...) paste(..., sep='.'), ctx$select(ctx$colors)),
          .group.labels = do.call(function(...) paste(..., sep='.'), ctx$select(ctx$labels))) %>%
+  arrange(.group.labels) %>%
   group_by(.ci, .ri) %>%
-  do(do.ttest(., 
-              alternative = ctx$op.value('alternative'),
-              mu = as.double(ctx$op.value('mu')),
-              paired = as.logical(ctx$op.value('paired')),
-              var.equal = as.logical(ctx$op.value('var.equal')),
-              conf.level = as.double(ctx$op.value('conf.level')))) %>%
+  do(t_test(
+    ., 
+    .y ~ .group.colors,
+    p.adjust.method = p.adjust.method,
+    alternative = alternative,
+    mu = mu,
+    paired = paired,
+    var.equal = var.equal,
+    conf.level = conf.level)) %>%
   ctx$addNamespace() %>%
   ctx$save()
