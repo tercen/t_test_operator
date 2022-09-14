@@ -2,7 +2,7 @@
 
 ##### Description
 
-The `ttest` operator performs a Student's t-test on the data.
+The `ttest` operator performs a (pairwise) Student's t-test on the data.
 
 ##### Usage
 
@@ -25,12 +25,13 @@ Output relations|.
 ---|---
 `group1`| first group of the comparison
 `group2`| second group of the comparison
-`p.value`| numeric, p-value calculated per cell
-`p.value`| numeric, p-value calculated per cell
-`p.value`| numeric, p-value calculated per cell
-`p.value`| numeric, p-value calculated per cell
-
-group1 group2    n1    n2 statistic    df        p    p.adj p.adj.signif
+`n1`| group1 size
+`n2`| group2 size
+`statistic`| Test statistic
+`df`| Degrees of freedom
+`p`| p-value
+`p.adj`| Adjusted p-value
+`p.adj.signif`| Label displaying significance
 
 ##### Details
 

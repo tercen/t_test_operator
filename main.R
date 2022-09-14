@@ -3,9 +3,6 @@ library(tercenApi)
 library(dplyr)
 library(rstatix)
 
-options("tercen.workflowId" = "accb3dd703974f1ce0afa21032002592")
-options("tercen.stepId" = "15c0c454-f506-4d67-b86e-ce83a92dcfb8")
-
 ctx = tercenCtx()
 
 if(length(ctx$colors) < 1) stop("A color factor is required.")
