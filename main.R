@@ -12,7 +12,7 @@ alternative <- ctx$op.value('alternative', as.character, 'two.sided')
 mu <- ctx$op.value('mu', as.double, 0.0)
 var.equal <- ctx$op.value('var.equal', as.logical, TRUE)
 conf.level <- ctx$op.value('conf.level', as.double, 0.95)
-p.adjust.method <- ctx$op.value('conf.level', as.character, 'holm')
+p.adjust.method <- ctx$op.value('p.adjust.method', as.character, 'holm')
 
 if(paired & length(ctx$labels) < 1) {
   stop("Labels are required for a paired test.")
