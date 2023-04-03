@@ -12,6 +12,7 @@
     "condition"
   ],
   "labels": [],
+  "skipColumns": ["neglog10_p"],
   "yAxis": "y_values",
   "xAxis": "x_values",
   "generatedOn": "09/14/2022 03:40:05 PM 2022",
