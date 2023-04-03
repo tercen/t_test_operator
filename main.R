@@ -1,7 +1,9 @@
-library(tercen)
-library(tercenApi)
-library(dplyr)
-library(rstatix)
+suppressPackageStartupMessages({
+  library(tercen)
+  library(tercenApi)
+  library(dplyr)
+  library(rstatix)
+})
 
 ctx = tercenCtx()
 

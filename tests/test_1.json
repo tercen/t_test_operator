@@ -1,21 +1,18 @@
 {
   "kind": "OperatorUnitTest",
   "name": "test_1",
-  "namespace": "ds00",
+  "namespace": "ds9",
   "inputDataUri": "test_1_in.csv",
-  "outputDataUri": ["test_1_out_1.csv", "test_1_out_2.csv", "test_1_out_3.csv"],
-  "columns": [
-    "gene"
-  ],
-  "rows": ["tableId"],
+  "outputDataUri": ["test_1_out_1.csv", "test_1_out_2.csv"],
+  "columns": [],
+  "rows": ["variable"],
   "colors": [
-    "condition"
+    "sex"
   ],
   "labels": [],
-  "skipColumns": ["neglog10_p"],
   "yAxis": "y_values",
-  "xAxis": "x_values",
-  "generatedOn": "09/14/2022 03:40:05 PM 2022",
+  "xAxis": "",
+  "generatedOn": "04/03/2023 02:08:08 PM 2023",
   "version": "",
-  "absTol": 1e-05
+  "absTol": 1e-06
 }
