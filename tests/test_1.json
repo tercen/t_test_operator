@@ -3,8 +3,10 @@
   "name": "test_1",
   "namespace": "ds9",
   "inputDataUri": "test_1_in.csv",
-  "outputDataUri": ["test_1_out_1.csv", "test_1_out_2.csv"],
-  "columns": [],
+  "outputDataUri": ["test_1_out_1.csv", "test_1_out_2.csv", "test_1_out_3.csv"],
+  "columns": [
+    "filename"
+  ],
   "rows": ["variable"],
   "colors": [
     "sex"
@@ -12,7 +14,7 @@
   "labels": [],
   "yAxis": "y_values",
   "xAxis": "",
-  "generatedOn": "04/03/2023 02:08:08 PM 2023",
+  "generatedOn": "04/03/2023 02:14:21 PM 2023",
   "version": "",
   "absTol": 1e-06
 }
