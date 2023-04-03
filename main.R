@@ -13,6 +13,7 @@ mu <- ctx$op.value('mu', as.double, 0.0)
 var.equal <- ctx$op.value('var.equal', as.logical, FALSE)
 conf.level <- ctx$op.value('conf.level', as.double, 0.95)
 p.adjust.method <- ctx$op.value('p.adjust.method', as.character, 'holm')
+detailed <- ctx$op.value('detailed', as.logical, FALSE)
 
 if(paired & length(ctx$labels) < 1) {
   stop("Labels are required for a paired test.")
@@ -32,8 +33,14 @@ df <- ctx %>%
     mu = mu,
     paired = paired,
     var.equal = var.equal,
+    detailed = detailed,
     conf.level = conf.level)) %>%
   select(-.y.) %>%
-  mutate(n1 = as.double(n1), n2 = as.double(n2)) %>%
+  mutate(
+    n1 = as.double(n1),
+    n2 = as.double(n2),
+    neglog10_p = -log10(p)
+  ) %>%
+  rename(any_of(c(delta = "estimate"))) %>%
   ctx$addNamespace() %>%
   ctx$save()

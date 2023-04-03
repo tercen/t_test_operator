@@ -4,7 +4,7 @@
   "tags": ["statistical testing"],
   "authors": ["tercen"],
   "urls": ["https://github.com/tercen/t_test_operator"],
-  "container": "tercen/t_test_operator:1.0.0",
+  "container": "tercen/t_test_operator:latest",
   "properties": [
     {
     "kind": "EnumeratedProperty",
@@ -56,6 +56,12 @@
     "name": "conf.level",
     "defaultValue": 0.95,
     "description": "Confidence level of the interval."
+  },
+  {
+    "kind": "BooleanProperty",
+    "name": "detailed",
+    "defaultValue": false,
+    "description": "Whether to produce a more detailed output or not."
   }
   ]
 }
