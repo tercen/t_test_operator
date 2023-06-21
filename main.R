@@ -16,7 +16,7 @@ var.equal <- ctx$op.value('var.equal', as.logical, FALSE)
 conf.level <- ctx$op.value('conf.level', as.double, 0.95)
 p.adjust.method <- ctx$op.value('p.adjust.method', as.character, 'holm')
 detailed <- ctx$op.value('detailed', as.logical, FALSE)
-reference_index <- ctx$op.value('reference_index', as.double, 1)
+reference_index <- ctx$op.value('reference_index', as.double, 0)
 
 if(paired & length(ctx$labels) < 1) {
   stop("Labels are required for a paired test.")
@@ -27,7 +27,15 @@ df <- ctx %>%
   mutate(.group.colors = do.call(function(...) paste(..., sep='.'), ctx$select(ctx$colors)),
          .group.labels = do.call(function(...) paste(..., sep='.'), ctx$select(ctx$labels))) %>%
   arrange(.group.labels) %>%
-  group_by(.ci, .ri) %>%
+  group_by(.ci, .ri)
+
+if(reference_index == 0) {
+  ref.group <- NULL
+} else {
+  ref.group <- as.character(unique(df$.group.colors)[reference_index])
+}
+
+df %>%
   do(t_test(
     ., 
     .y ~ .group.colors,
@@ -37,7 +45,7 @@ df <- ctx %>%
     paired = paired,
     var.equal = var.equal,
     detailed = detailed,
-    ref.group = levels(.group.colors)[reference_index],
+    ref.group = ref.group,
     conf.level = conf.level)) %>%
   select(-.y.) %>%
   mutate(

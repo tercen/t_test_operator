@@ -66,8 +66,8 @@
   {
     "kind": "DoubleProperty",
     "name": "reference_index",
-    "defaultValue": 1,
-    "description": "Index of the group used as reference."
+    "defaultValue": 0,
+    "description": "Index of the group used as reference. If 0 (default), this setting will be ignored."
   }
   ]
 }
