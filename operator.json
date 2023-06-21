@@ -62,6 +62,12 @@
     "name": "detailed",
     "defaultValue": false,
     "description": "Whether to produce a more detailed output or not."
+  },
+  {
+    "kind": "DoubleProperty",
+    "name": "reference_index",
+    "defaultValue": 1,
+    "description": "Index of the group used as reference."
   }
   ]
 }

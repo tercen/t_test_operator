@@ -16,6 +16,7 @@ var.equal <- ctx$op.value('var.equal', as.logical, FALSE)
 conf.level <- ctx$op.value('conf.level', as.double, 0.95)
 p.adjust.method <- ctx$op.value('p.adjust.method', as.character, 'holm')
 detailed <- ctx$op.value('detailed', as.logical, FALSE)
+reference_index <- ctx$op.value('reference_index', as.double, 1)
 
 if(paired & length(ctx$labels) < 1) {
   stop("Labels are required for a paired test.")
@@ -36,6 +37,7 @@ df <- ctx %>%
     paired = paired,
     var.equal = var.equal,
     detailed = detailed,
+    ref.group = levels(.group.colors)[reference_index],
     conf.level = conf.level)) %>%
   select(-.y.) %>%
   mutate(

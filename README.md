@@ -20,6 +20,7 @@ Input parameters|.
 `mu`            | A number indicating the true value of the mean (or difference in means if you are performing a two sample test), default 0.0
 `var.equal`     |logical, indicating whether to treat the two variances as being equal. If `TRUE` then the pooled variance is used to estimate the variance otherwise the Welch (or Satterthwaite) approximation to the degrees of freedom is used, default `FALSE`
 `conf.level`    |numeric, confidence level of the interval, default 0.95
+`reference.level`    | numeric, Index of the group used as reference.
 
 Output relations|.
 ---|---
