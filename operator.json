@@ -1,75 +1,79 @@
 {
   "name": "t Test",
   "description": "Test for significant differences between the means of multiple groups.",
-  "tags": ["statistical testing"],
-  "authors": ["tercen"],
-  "urls": ["https://github.com/tercen/t_test_operator"],
+  "tags": [
+    "statistical testing"
+  ],
+  "authors": [
+    "tercen"
+  ],
+  "urls": [
+    "https://github.com/tercen/t_test_operator"
+  ],
   "container": "tercen/t_test_operator:latest",
   "properties": [
     {
-    "kind": "EnumeratedProperty",
-    "name": "alternative",
-    "defaultValue": "two.sided",
-    "values": [
-      "two.sided",
-      "less",
-      "greater"
-    ],
-    "description": "A character string specifying the alternative hypothesis."
-  },
-  {
-    "kind": "BooleanProperty",
-    "name": "paired",
-    "defaultValue": false,
-    "description": "A logical variable indicating whether the observations are paired. If true, a label is expected from the Tercen projection to assign the pairs."
-  },
-      {
-    "kind": "EnumeratedProperty",
-    "name": "p.adjust.method",
-    "defaultValue": "holm",
-    "values": [
-      "holm",
-      "hochberg",
-      "hommel",
-      "bonferroni",
-      "BH",
-      "BY",
-      "fdr",
-      "none"
-    ],
-    "description": "Multiple testing correction to use."
-  },
-  {
-    "kind": "DoubleProperty",
-    "name": "mu",
-    "defaultValue": 0.0,
-    "description": "A number indicating the true value of the mean (or difference in means if you are performing a two sample test)"
-  },
-  {
-    "kind": "BooleanProperty",
-    "name": "var.equal",
-    "defaultValue": false,
-    "description": "A logical variable indicating whether to treat the two variances as being equal. If TRUE then the pooled variance is used to estimate the variance otherwise the Welch (or Satterthwaite) approximation to the degrees of freedom is used."
-  },
-  {
-    "kind": "DoubleProperty",
-    "name": "conf.level",
-    "defaultValue": 0.95,
-    "description": "Confidence level of the interval."
-  },
-  {
-    "kind": "BooleanProperty",
-    "name": "detailed",
-    "defaultValue": false,
-    "description": "Whether to produce a more detailed output or not."
-  },
-  {
-    "kind": "DoubleProperty",
-    "name": "reference_index",
-    "defaultValue": 0,
-    "description": "Index of the group used as reference. If 0 (default), this setting will be ignored."
-  }
+      "kind": "EnumeratedProperty",
+      "name": "alternative",
+      "defaultValue": "two.sided",
+      "values": [
+        "two.sided",
+        "less",
+        "greater"
+      ],
+      "description": "A character string specifying the alternative hypothesis."
+    },
+    {
+      "kind": "BooleanProperty",
+      "name": "paired",
+      "defaultValue": false,
+      "description": "A logical variable indicating whether the observations are paired. If true, a label is expected from the Tercen projection to assign the pairs."
+    },
+    {
+      "kind": "EnumeratedProperty",
+      "name": "p.adjust.method",
+      "defaultValue": "holm",
+      "values": [
+        "holm",
+        "hochberg",
+        "hommel",
+        "bonferroni",
+        "BH",
+        "BY",
+        "fdr",
+        "none"
+      ],
+      "description": "Multiple testing correction to use."
+    },
+    {
+      "kind": "DoubleProperty",
+      "name": "mu",
+      "defaultValue": 0,
+      "description": "A number indicating the true value of the mean (or difference in means if you are performing a two sample test)"
+    },
+    {
+      "kind": "BooleanProperty",
+      "name": "var.equal",
+      "defaultValue": false,
+      "description": "A logical variable indicating whether to treat the two variances as being equal. If TRUE then the pooled variance is used to estimate the variance otherwise the Welch (or Satterthwaite) approximation to the degrees of freedom is used."
+    },
+    {
+      "kind": "DoubleProperty",
+      "name": "conf.level",
+      "defaultValue": 0.95,
+      "description": "Confidence level of the interval."
+    },
+    {
+      "kind": "BooleanProperty",
+      "name": "detailed",
+      "defaultValue": false,
+      "description": "Whether to produce a more detailed output or not."
+    },
+    {
+      "kind": "DoubleProperty",
+      "name": "reference_index",
+      "defaultValue": 0,
+      "description": "Index of the group used as reference. If 0 (default), this setting will be ignored."
+    }
   ]
 }
-
-
