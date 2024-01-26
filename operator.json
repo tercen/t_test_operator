@@ -1,6 +1,6 @@
 {
   "name": "t Test",
-  "description": "Test for significant differences between the means of multiple groups.",
+  "description": "Tests for significant differences between the means of multiple groups.",
   "tags": [
     "statistical testing"
   ],
