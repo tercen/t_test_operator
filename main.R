@@ -35,9 +35,9 @@ if(reference_index == 0) {
   ref.group <- as.character(unique(df$.group.colors)[reference_index])
 }
 
-df %>%
-  do(t_test(
-    ., 
+do_t_test <- function(df) {
+  res <- try(t_test(
+    df, 
     .y ~ .group.colors,
     p.adjust.method = p.adjust.method,
     alternative = alternative,
@@ -46,8 +46,17 @@ df %>%
     var.equal = var.equal,
     detailed = detailed,
     ref.group = ref.group,
-    conf.level = conf.level)) %>%
-  select(-.y.) %>%
+    conf.level = conf.level))
+  if(inherits(res, "try-error")) {
+    return(tibble(missing = NA))
+  } else {
+    return(res)
+  }
+}
+
+df %>%
+  do(do_t_test(.)) %>%
+  select(-.y., -missing) %>%
   mutate(
     n1 = as.double(n1),
     n2 = as.double(n2),
