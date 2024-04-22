@@ -46,7 +46,7 @@ do_t_test <- function(df) {
     var.equal = var.equal,
     detailed = detailed,
     ref.group = ref.group,
-    conf.level = conf.level))
+    conf.level = conf.level) %>% mutate(missing = NA))
   if(inherits(res, "try-error")) {
     return(tibble(missing = NA))
   } else {
