@@ -75,5 +75,54 @@
       "defaultValue": 0,
       "description": "Index of the group used as reference. If 0 (default), this setting will be ignored."
     }
-  ]
+  ],
+  "operatorSpec": {
+    "kind": "OperatorSpec",
+    "ontologyUri": "https://tercen.com/_ontology/tercen",
+    "ontologyVersion": "0.0.1",
+    "inputSpecs": [
+      {
+        "kind": "CrosstabSpec",
+        "metaFactors": [
+          {
+            "kind": "MetaFactor",
+            "name": "Groups",
+            "type": "",
+            "description": "Represents the groups to compare.",
+            "ontologyMapping": "group",
+            "crosstabMapping": "color",
+            "cardinality": "1..n",
+            "factors": []
+          },
+          {
+            "kind": "MetaFactor",
+            "name": "Labels",
+            "type": "",
+            "description": "Optional, represents the pairing for paired tests.",
+            "ontologyMapping": "label",
+            "crosstabMapping": "label",
+            "cardinality": "0..n",
+            "factors": []
+          }
+        ],
+        "axis": [
+          {
+            "kind": "AxisSpec",
+            "metaFactors": [
+              {
+                "kind": "MetaFactor",
+                "name": "Measurement",
+                "type": "numeric",
+                "description": "Measurement values.",
+                "ontologyMapping": "measurement",
+                "crosstabMapping": "y",
+                "cardinality": "1",
+                "factors": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }
