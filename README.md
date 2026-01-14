@@ -8,9 +8,11 @@ The `ttest` operator performs a (pairwise) Student's t-test on the data.
 
 Input projection|.
 -----------|--------
-`color`    | represents the groups to compare
 `y-axis`   | measurement value
+`color`    | represents the groups to compare
 `labels`   | optional, represents the pairing
+`row`      | optional, row factors for stratification
+`column`   | optional, column factors for stratification
 
 Input parameters|.
 ---|---
