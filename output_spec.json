@@ -1,0 +1,191 @@
+{
+  "outputSpecs": [
+    {
+      "kind": "ConditionalJoinSpec",
+      "description": "Output varies based on 'detailed' property",
+      "alternatives": [
+        {
+          "condition": "detailed = false (default)",
+          "joinSpec": {
+            "kind": "OperatorJoinSpec",
+            "joinOperators": [
+              {
+                "kind": "JoinOperator",
+                "joinType": "left",
+                "leftPair": {
+                  "kind": "ColumnPair",
+                  "lColumns": [
+                    "Row",
+                    "Column"
+                  ],
+                  "rColumns": [
+                    "Row",
+                    "Column"
+                  ]
+                },
+                "rightRelation": {
+                  "kind": "TableRelation",
+                  "attributes": [
+                    {
+                      "kind": "Attribute",
+                      "name": "group1",
+                      "type": "string"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "group2",
+                      "type": "string"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "n1",
+                      "type": "double"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "n2",
+                      "type": "double"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "statistic",
+                      "type": "double"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "df",
+                      "type": "double"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "p",
+                      "type": "double"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "p.adj",
+                      "type": "double"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "p.adj.signif",
+                      "type": "string"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "neglog10_p",
+                      "type": "double"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "condition": "detailed = true",
+          "joinSpec": {
+            "kind": "OperatorJoinSpec",
+            "joinOperators": [
+              {
+                "kind": "JoinOperator",
+                "joinType": "left",
+                "leftPair": {
+                  "kind": "ColumnPair",
+                  "lColumns": [
+                    "Row",
+                    "Column"
+                  ],
+                  "rColumns": [
+                    "Row",
+                    "Column"
+                  ]
+                },
+                "rightRelation": {
+                  "kind": "TableRelation",
+                  "attributes": [
+                    {
+                      "kind": "Attribute",
+                      "name": "group1",
+                      "type": "string"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "group2",
+                      "type": "string"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "n1",
+                      "type": "double"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "n2",
+                      "type": "double"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "statistic",
+                      "type": "double"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "df",
+                      "type": "double"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "p",
+                      "type": "double"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "p.adj",
+                      "type": "double"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "p.adj.signif",
+                      "type": "string"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "neglog10_p",
+                      "type": "double"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "delta",
+                      "type": "double"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "estimate1",
+                      "type": "double"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "estimate2",
+                      "type": "double"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "conf.low",
+                      "type": "double"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "conf.high",
+                      "type": "double"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
