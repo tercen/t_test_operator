@@ -5,6 +5,7 @@
       "description": "Output varies based on 'detailed' property",
       "alternatives": [
         {
+          "kind": "OutputAlternative",
           "condition": "detailed = false (default)",
           "joinSpec": {
             "kind": "OperatorJoinSpec",
@@ -83,6 +84,7 @@
           }
         },
         {
+          "kind": "OutputAlternative",
           "condition": "detailed = true",
           "joinSpec": {
             "kind": "OperatorJoinSpec",
