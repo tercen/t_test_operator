@@ -24,7 +24,7 @@
             "name": "Row",
             "type": "",
             "description": "Optional row stratification factor",
-            "ontologyMapping": "row",
+            "ontologyMapping": "variable",
             "crosstabMapping": "row",
             "cardinality": "0..n",
             "factors": []
@@ -34,7 +34,7 @@
             "name": "Column",
             "type": "",
             "description": "Optional column stratification factor",
-            "ontologyMapping": "column",
+            "ontologyMapping": "observation",
             "crosstabMapping": "column",
             "cardinality": "0..n",
             "factors": []
@@ -69,7 +69,7 @@
                 "name": "Pairing",
                 "type": "",
                 "description": "Optional pairing factor for paired tests",
-                "ontologyMapping": "label",
+                "ontologyMapping": "pairing",
                 "crosstabMapping": "label",
                 "cardinality": "0..1",
                 "factors": []
